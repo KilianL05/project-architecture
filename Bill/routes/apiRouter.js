@@ -1,7 +1,6 @@
 const express = require('express');
 const storageRouter = require('./api/storageRouter');
-const Transformation = require('../models/Transformation');
-const transformRoutes = require('./api/transform');
+const transformRoutes = require('./api/transformRouter');
 
 
 const router = express.Router();
