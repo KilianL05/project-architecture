@@ -1,8 +1,8 @@
 const TransformationFactory = require("../factory/transformationFactory");
 const {get, post} = require("axios");
 const ImageDAO = require("../dao/imagesDAO");
+const config = require("../config");
 
-const CLAIRE_URL = "http://claire:8000";
 
 class TransformationService {
   constructor(diegoServers, eliseServers) {
@@ -29,7 +29,7 @@ class TransformationService {
   }
 
   async fetchOriginalImage(filename) {
-    const response = await get(`${CLAIRE_URL}/images/${filename}`, { responseType: 'arraybuffer' });
+    const response = await get(`${config.CLAIRE_URL}/images/${filename}`, { responseType: 'arraybuffer' });
     return response.data;
   }
 

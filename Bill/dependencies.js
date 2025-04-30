@@ -1,5 +1,6 @@
 const MinIOStorageService = require('./services/minioStorageService');
 const config = require('./config');
+const TransformationService = require('./services/transformationService');
 
 function getStorageService() {
   return new MinIOStorageService(
@@ -11,4 +12,8 @@ function getStorageService() {
   );
 }
 
-module.exports = { getStorageService };
+function getTransformationService() {
+  return new TransformationService(config.DIEGO_SERVERS, config.ELISE_SERVERS);
+}
+
+module.exports = { getStorageService, getTransformationService };

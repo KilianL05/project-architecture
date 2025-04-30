@@ -1,5 +1,5 @@
 const SQLiteStrategy = require('./strategies/sqliteStrategy');
-const PostgresStrategy = require('./strategies/postgresStrategy');
+// const PostgresStrategy = require('./strategies/postgresStrategy');
 const DatabaseContext = require('./databaseContext');
 
 
