@@ -31,6 +31,10 @@ class MinIOStorageService extends StorageService {
     await this.client.fGetObject(bucketName, fileName, destinationFile);
     console.log(`${fileName} successfully downloaded to ${destinationFile}`);
   }
+
+  async getFileStream(bucketName, fileName) {
+    return this.client.getObject(bucketName, fileName);
+  }
 }
 
 module.exports = MinIOStorageService;

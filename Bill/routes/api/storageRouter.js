@@ -27,4 +27,16 @@ router.get('/download', async (req, res) => {
   }
 });
 
+router.get('/:filename', async (req, res) => {
+  const { filename } = req.params;
+  const storageService = getStorageService();
+  
+  try {
+    const fileStream = await storageService.getFileStream(config.MINIO_BUCKET_NAME, filename);
+    fileStream.pipe(res);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 module.exports = router;

@@ -1,6 +1,6 @@
 const express = require('express');
 const axios = require('axios');
-const ImageDAO = require('../../dao/imagesDao');
+const ImageDAO = require('../../dao/imagesDAO');
 const TransformationFactory = require('../../factory/transformationFactory');
 const Transformation = require('../../models/Transformation');
 
