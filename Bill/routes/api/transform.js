@@ -1,8 +1,8 @@
 const express = require('express');
 const axios = require('axios');
-const ImageDAO = require('../dao/imagesDAO');
-const TransformationFactory = require('../factory/transformationFactory');
-const Transformation = require('../models/Transformation');
+const ImageDAO = require('../../dao/imagesDao');
+const TransformationFactory = require('../../factory/transformationFactory');
+const Transformation = require('../../models/Transformation');
 
 const router = express.Router();
 
@@ -53,7 +53,7 @@ router.post('/transform', async (req, res) => {
       currentImage = response.data;
     }
 
-    res.json({ message: "Success", image: Buffer.from(currentImage).toString('hex') });
+    res.json({ message: "Succès", image: Buffer.from(currentImage).toString('hex') });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
