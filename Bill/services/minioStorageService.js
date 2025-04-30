@@ -2,14 +2,15 @@ const Minio = require('minio');
 const StorageService = require('./storageService');
 
 class MinIOStorageService extends StorageService {
-  constructor(endpoint, accessKey, secretKey) {
+  constructor(endpoint, port, accessKey, secretKey, bucketName) {
     super();
     this.client = new Minio.Client({
       endPoint: endpoint,
-      port: 9000,
+      port: port,
       useSSL: false,
       accessKey: accessKey,
       secretKey: secretKey,
+      bucketName: bucketName,
     });
   }
 
