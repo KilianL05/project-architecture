@@ -1,5 +1,5 @@
 const express = require('express');
-const { getStorageService } = require('../dependencies');
+const { getStorageService } = require('../../dependencies');
 
 const router = express.Router();
 
