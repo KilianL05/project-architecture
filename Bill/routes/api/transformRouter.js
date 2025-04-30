@@ -3,7 +3,7 @@ const { getTransformationService } = require('../../dependencies');
 
 const router = express.Router();
 
-router.post('/transform', async (req, res) => {
+router.post('/apply', async (req, res) => {
   const { filename, operations } = req.body;
   const transformationService = getTransformationService();
   try {
